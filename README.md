@@ -35,9 +35,9 @@ Zero Latency adalah aplikasi kasir toko gaming futuristik yang dibangun mengguna
 
 ## 📋 Implementasi Soal UTS
 
-### 🎯 Bagian A - State Management (30 Poin)
+### 🎯 Bagian A - State Management
 
-#### 1. Pemahaman Cubit vs Bloc Pattern (10 Poin)
+#### 1. Pemahaman Cubit vs Bloc Pattern
 
 **Mengapa Memilih Cubit?**
 
@@ -104,7 +104,7 @@ Untuk aplikasi shopping cart gaming store, Cubit adalah pilihan yang tepat karen
 3. **Maintainability**: Code lebih mudah dibaca dan di-maintain
 4. **Performance**: Function call lebih lightweight daripada event dispatching
 
-#### 2. Clean Architecture Implementation (10 Poin)
+#### 2. Clean Architecture Implementation
 
 **Arsitektur 3-Layer dalam Zero Latency:**
 
@@ -271,7 +271,7 @@ emit(newState)
 User sees updated cart ✨
 ```
 
-#### 3. CartCubit State Management (10 Poin)
+#### 3. CartCubit State Management
 
 **Implementasi Lengkap CartCubit dengan Penjelasan:**
 
@@ -483,7 +483,7 @@ IconButton(
 ✅ **Performance**: Efficient rebuilds, hanya widget yang perlu
 ✅ **Type Safe**: Dart type system catch errors di compile time
 
-### 🚀 Bagian B - Core Implementation (70 Poin)
+### 🚀 Bagian B - Core Implementation 
 
 #### Struktur Project Zero Latency
 ```
@@ -519,7 +519,7 @@ class ProductModel {
 }
 ```
 
-**2. CartCubit - Zero Latency Performance (20 Poin)**
+**2. CartCubit - Zero Latency Performance**
 ```dart
 class CartCubit extends Cubit<CartState> {
   // Core cart operations
@@ -539,7 +539,7 @@ class CartCubit extends Cubit<CartState> {
 }
 ```
 
-**3. ProductCard - Gaming UI Component (15 Poin)**
+**3. ProductCard - Gaming UI Component**
 - 🎮 **Gaming Aesthetics**: Neon borders, gradient backgrounds
 - 📱 **Mobile-First**: Optimized touch targets dan spacing
 - 🔄 **Real-time Updates**: Instant quantity changes
@@ -553,7 +553,7 @@ class CartCubit extends Cubit<CartState> {
 - 🔔 **Notifications**: Success feedback dengan sound effects
 - 📊 **Order Summary**: Professional receipt format
 
-### 🎖️ Bagian C - Bonus Features (10 Poin)
+### 🎖️ Bagian C - Bonus Features
 
 #### Advanced Gaming Store Features
 
