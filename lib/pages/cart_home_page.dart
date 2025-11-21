@@ -86,10 +86,9 @@ class CartHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('💻 Kasir Toko Komputer'),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
-        elevation: 2,
+        title: const Text('💻 Zero Latency - Gaming Store'),
+        // Remove hardcoded colors to use theme instead
+        elevation: 0,
         actions: [
           BlocBuilder<CartCubit, CartState>(
             builder: (context, state) {

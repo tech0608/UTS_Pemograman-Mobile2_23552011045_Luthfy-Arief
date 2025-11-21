@@ -17,8 +17,16 @@ class ProductCard extends StatelessWidget {
         final quantity = cartCubit.getProductQuantity(product);
 
         return Card(
-          elevation: 4,
+          elevation: 8,
           margin: const EdgeInsets.all(8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(
+              color: const Color(0xFF00FF41).withOpacity(0.3),
+              width: 1,
+            ),
+          ),
+          color: const Color(0xFF050816),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,24 +37,37 @@ class ProductCard extends StatelessWidget {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.vertical(
-                      top: Radius.circular(8),
+                      top: Radius.circular(12),
                     ),
-                    color: Colors.grey[200],
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        const Color(0xFF0A0E27).withOpacity(0.8),
+                        const Color(0xFF050816),
+                      ],
+                    ),
+                    border: Border.all(
+                      color: const Color(0xFF00FF41).withOpacity(0.2),
+                      width: 1,
+                    ),
                   ),
                   child: product.image.isNotEmpty
                       ? ClipRRect(
                           borderRadius: const BorderRadius.vertical(
-                            top: Radius.circular(8),
+                            top: Radius.circular(12),
                           ),
                           child: Image.network(
                             product.image,
                             fit: BoxFit.cover,
                             errorBuilder: (context, error, stackTrace) {
-                              return const Center(
+                              return Center(
                                 child: Icon(
                                   Icons.image_not_supported,
                                   size: 50,
-                                  color: Colors.grey,
+                                  color: const Color(
+                                    0xFF00FF41,
+                                  ).withOpacity(0.3),
                                 ),
                               );
                             },
@@ -58,11 +79,11 @@ class ProductCard extends StatelessWidget {
                             },
                           ),
                         )
-                      : const Center(
+                      : Center(
                           child: Icon(
-                            Icons.image,
+                            Icons.videogame_asset,
                             size: 50,
-                            color: Colors.grey,
+                            color: const Color(0xFF00FF41).withOpacity(0.3),
                           ),
                         ),
                 ),
@@ -82,6 +103,10 @@ class ProductCard extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
+                          color: Color(0xFF00FF41),
+                          shadows: [
+                            Shadow(color: Color(0xFF00FF41), blurRadius: 4),
+                          ],
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
@@ -92,8 +117,11 @@ class ProductCard extends StatelessWidget {
                         'Rp ${product.price.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]}.')}',
                         style: const TextStyle(
                           fontSize: 10,
-                          color: Colors.green,
+                          color: Color(0xFF00D9FF),
                           fontWeight: FontWeight.w600,
+                          shadows: [
+                            Shadow(color: Color(0xFF00D9FF), blurRadius: 3),
+                          ],
                         ),
                       ),
                       const Spacer(),
@@ -114,11 +142,21 @@ class ProductCard extends StatelessWidget {
                               );
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.indigo,
-                              foregroundColor: Colors.white,
+                              backgroundColor: const Color(0xFF00FF41),
+                              foregroundColor: const Color(0xFF050816),
                               padding: const EdgeInsets.symmetric(vertical: 8),
+                              elevation: 4,
+                              shadowColor: const Color(
+                                0xFF00FF41,
+                              ).withOpacity(0.5),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
                             ),
-                            child: const Text('Tambah'),
+                            child: const Text(
+                              'Tambah',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
                         )
                       else
@@ -138,8 +176,12 @@ class ProductCard extends StatelessWidget {
                               },
                               icon: const Icon(Icons.remove),
                               style: IconButton.styleFrom(
-                                backgroundColor: Colors.red[100],
-                                foregroundColor: Colors.red,
+                                backgroundColor: const Color(0xFF0A0E27),
+                                foregroundColor: const Color(0xFFFF006E),
+                                side: const BorderSide(
+                                  color: Color(0xFFFF006E),
+                                  width: 1,
+                                ),
                               ),
                             ),
                             // Quantity display
@@ -150,6 +192,13 @@ class ProductCard extends StatelessWidget {
                                 style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
+                                  color: Color(0xFF00FF41),
+                                  shadows: [
+                                    Shadow(
+                                      color: Color(0xFF00FF41),
+                                      blurRadius: 4,
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -160,8 +209,8 @@ class ProductCard extends StatelessWidget {
                               },
                               icon: const Icon(Icons.add),
                               style: IconButton.styleFrom(
-                                backgroundColor: Colors.green[100],
-                                foregroundColor: Colors.green,
+                                backgroundColor: const Color(0xFF00FF41),
+                                foregroundColor: const Color(0xFF050816),
                               ),
                             ),
                           ],
